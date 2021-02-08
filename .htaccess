@@ -1,0 +1,90 @@
+RewriteEngine On
+Options -Indexes
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^home$ index.php [L, NC, QSA]
+RewriteRule ^blog/([a-z0-9-_]+)$ single.php?thread_slug=$1 [L, NC, QSA]
+RewriteRule ^panel$ panel.php [L, NC, QSA]
+RewriteRule ^panel/$ panel.php [L, NC, QSA]
+RewriteRule ^panel/dashboard$ panel.php [L, NC, QSA]
+RewriteRule ^panel/settings$ panel-settings.php [L, NC, QSA]
+RewriteRule ^panel/category$ panel-category.php [L, NC, QSA]
+RewriteRule ^panel/team$ panel-team.php [L, NC, QSA]
+RewriteRule ^panel/counter$ panel-counter.php [L, NC, QSA]
+RewriteRule ^panel/client$ panel-client.php [L, NC, QSA]
+RewriteRule ^panel/blog$ panel-blog.php [L, NC, QSA]
+RewriteRule ^panel/blog/edit$ panel-blog-edit.php [L, NC, QSA]
+RewriteRule ^panel/blog/add$ panel-blog-add.php [L, NC, QSA]
+RewriteRule ^panel/portfolio$ panel-portfolio.php [L, NC, QSA]
+RewriteRule ^panel/portfolio/add$ panel-portfolio-add.php [L, NC, QSA]
+RewriteRule ^panel/portfolio/edit$ panel-portfolio-edit.php [L, NC, QSA]
+RewriteRule ^panel/media$ panel-media.php [L, NC, QSA]
+RewriteRule ^panel/service$ panel-service.php [L, NC, QSA]
+RewriteRule ^panel/testimonial$ panel-testimonial.php [L, NC, QSA]
+RewriteRule ^panel/user$ panel-user.php [L, NC, QSA]
+RewriteRule ^panel/login$ panel-login.php [L, NC, QSA]
+RewriteRule ^panel/register$ panel-register.php [L, NC, QSA]
+RewriteRule ^panel/forgot$ panel-forgot.php [L, NC, QSA]
+RewriteRule ^panel/reset$ panel-reset.php [L, NC, QSA]
+RewriteRule ^panel/verification/([a-z0-9-_]+)$ panel-verification.php?user_key=$1 [L, NC, QSA]
+RewriteRule ^panel/banned$ panel-banned.php [L, NC, QSA]
+RewriteRule ^panel/logout$ panel-logout.php [L, NC, QSA]
+RewriteRule ^settings$ settings.php [L, NC, QSA]
+RewriteRule ^sitemap.xml$ sitemap.php [L, NC, QSA]
+RewriteRule ^action$ action.php [L, NC, QSA]
+RewriteRule ^404$ 404.php [L, NC, QSA]
+ErrorDocument 404 /404.php
+
+# BEGIN Compress text files
+<ifModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/xml text/css text/plain
+  AddOutputFilterByType DEFLATE image/svg+xml application/xhtml+xml application/xml
+  AddOutputFilterByType DEFLATE application/rdf+xml application/rss+xml application/atom+xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript application/json
+  AddOutputFilterByType DEFLATE application/x-font-ttf application/x-font-otf
+  AddOutputFilterByType DEFLATE font/truetype font/opentype
+</ifModule>
+# END Compress text files
+
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access 1 month"
+ExpiresByType application/x-shockwave-flash "access 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+## EXPIRES CACHING ##
+
+# BEGIN Cache-Control Headers
+<ifModule mod_headers.c>
+  <filesMatch "\.(ico|jpe?g|png|gif|swf)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch "\.(css)$">
+    Header set Cache-Control "public"
+  </filesMatch>
+  <filesMatch "\.(js)$">
+    Header set Cache-Control "private"
+  </filesMatch>
+  <filesMatch "\.(x?html?|php)$">
+    Header set Cache-Control "private, must-revalidate"
+  </filesMatch>
+</ifModule>
+# END Cache-Control Headers
+
+# BEGIN Turn ETags Off
+FileETag None
+# END Turn ETags Off
+
+# 1 Month for most static assets
+<filesMatch ".(css|jpg|jpeg|png|gif|js|ico)$">
+Header set Cache-Control "max-age=2592000, public"
+</filesMatch>

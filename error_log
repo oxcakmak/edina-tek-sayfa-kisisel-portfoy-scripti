@@ -1,0 +1,13 @@
+[07-Dec-2020 23:06:36 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 233
+[07-Dec-2020 23:06:36 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 236
+[07-Dec-2020 23:30:12 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 233
+[07-Dec-2020 23:30:12 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 236
+[08-Dec-2020 11:52:30 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-forgot.php on line 3
+[01-Jan-2021 11:26:51 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 233
+[01-Jan-2021 11:26:51 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 236
+[19-Jan-2021 13:35:09 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-forgot.php on line 3
+[19-Jan-2021 13:35:09 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/oxcakma1/demo/edina/panel-forgot.php on line 3
+[19-Jan-2021 22:01:55 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 233
+[19-Jan-2021 22:01:55 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/oxcakma1/demo/edina/panel-settings.php on line 233
+[19-Jan-2021 22:01:55 Europe/Istanbul] PHP Notice:  Undefined variable: config in /home/oxcakma1/demo/edina/panel-settings.php on line 236
+[19-Jan-2021 22:01:55 Europe/Istanbul] PHP Notice:  Trying to access array offset on value of type null in /home/oxcakma1/demo/edina/panel-settings.php on line 236

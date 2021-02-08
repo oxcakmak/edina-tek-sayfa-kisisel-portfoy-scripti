@@ -1,0 +1,32 @@
+<!--blog area starts-->
+
+<div id="blog" class="blog-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+                <h2>'.$lang['menu_blog'].'</h2>
+                <p>'.ST_BLOG_DESCRIPTION.'</p>
+            </div>
+        </div>
+        <div class="row">';
+			
+			$dbh->orderBy("thread_id", "DESC");
+			foreach($dbh->get("thread") as $trRow){
+				echo '
+				<div class="col-sm-6 col-md-4 col-lg-4">
+					<div class="single-blogs wow fadeInDown xs-mb-30 sm-mb-30" data-wow-delay="0.2s">
+						<div class="blogs-img"><a href="'.BASE_URL."blog/".$trRow['thread_slug'].'"><img alt="'.$trRow['thread_title'].'" src="'.BASE_URL.$trRow['thread_picture'].'"></a></div>
+						<div class="blogs-header">
+							<h2 class="blogs-title"><a href="'.BASE_URL."blog/".$trRow['thread_slug'].'">'.$trRow['thread_title'].'</a></h2>
+							<!-- <div class="posts-meta">By&nbsp;<a href="'.BASE_URL."blog/owner/".$trRow['thread_owner'].'">'.$trRow['thread_owner'].'</a>&nbsp;|&nbsp;'.$trRow['thread_date'].'</div> -->
+						</div>
+						<div class="blogs-text"><p>'.$trRow['thread_description'].'</p></div>
+						<div class="blog-btn"><a class="active my-btn-1" href="'.BASE_URL."blog/".$trRow['thread_slug'].'">Read more</a></div>
+					</div>
+				</div>
+				';
+			}
+		echo '</div>
+    </div>
+</div>
+<!--blog area ends-->
